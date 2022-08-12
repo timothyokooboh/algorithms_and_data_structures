@@ -87,7 +87,7 @@ const binarySearch = (arr, value) => {
 }
 
 
-// determine if a list is sorted
+// determine if a list is sorted in ascending order
 
 const isSorted = (arr) => {
     for(let i = 0; i < arr.length - 1; i++) {
@@ -97,5 +97,5 @@ const isSorted = (arr) => {
     return true;
 }
 
-const res = isSorted([0, 2, 4, 5, 6])
+const res = isSorted([1, 2, 3])
 console.log(res)
