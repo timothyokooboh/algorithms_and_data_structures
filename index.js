@@ -62,5 +62,29 @@ const quickSort = (arr) => {
     }
     return [...quickSort(left), pivot, ...quickSort(right)]
 }
-const sortedArray = quickSort([4, 1, 7, 42, 0, 3, 8, 9, 5])
-console.log(sortedArray)
+
+
+// binary search
+const binarySearch = (arr, value) => {
+    const sortedList = quickSort(arr);
+
+    let startIndex = 0;
+    let endIndex = sortedList.length - 1;
+
+    while(startIndex <= endIndex) {
+        let mid = Math.floor((startIndex + endIndex)/2)
+        if(value == arr[mid]) {
+            return mid;
+        }
+        else if(value < sortedList[mid]) {
+            endIndex = mid - 1;
+        } else if (value > mid) {
+            startIndex = mid + 1
+        }
+    }
+
+    return -1;
+}
+
+const index = binarySearch([2, 5, 6, 8, 9], 2)
+console.log(index)
